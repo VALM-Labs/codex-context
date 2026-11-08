@@ -4,6 +4,7 @@ tests/**
 test-host/**
 .tmp/**
 build.mjs
+upstream-adapter.mjs
 vitest.config.*
 package-lock.json
 *.vsix

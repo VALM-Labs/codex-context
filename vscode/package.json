@@ -1,8 +1,8 @@
 {
   "name": "codex-context",
   "displayName": "codex-context",
-  "description": "The original dsh-context interface adapted for Codex sessions in VS Code.",
-  "version": "0.1.0",
+  "description": "Codex session context analytics for VS Code: token usage, cost estimates, context composition, timeline, and agent teams.",
+  "version": "0.1.1",
   "publisher": "VALM-Labs",
   "license": "Apache-2.0",
   "repository": {
@@ -124,7 +124,7 @@
   "scripts": {
     "build": "node build.mjs",
     "test": "vitest run",
-    "package": "npm run build && vsce package --no-dependencies --allow-missing-repository --out codex-context-0.1.0.vsix"
+    "package": "npm run build && vsce package --no-dependencies --allow-missing-repository --out codex-context-0.1.1.vsix"
   },
   "dependencies": {
     "@deepseek-ai/dsh-client-store": "^0.2.2-rc.1",

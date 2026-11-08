@@ -11,6 +11,7 @@ import { watchHistoryFaces } from '../../../src/client/historyPage'
 import { setModelPricesLoader } from '../../../src/client/modelPrices'
 import type { ClientCtx } from '../../../src/client/services'
 import { request, vscode } from './bridge'
+import { hostText } from './hostCopy'
 
 export type Obj=Record<string,unknown>
 const record=(v:unknown):Obj=>v!==null&&typeof v==='object'&&!Array.isArray(v)?v as Obj:{}
@@ -30,10 +31,10 @@ export function useSessions<T>(selector:(value:unknown)=>T):T{return selector(us
 export function useWorkspaces<T>(selector:(value:unknown)=>T):T{return selector(useStateStore().workspaces)}
 export function useChat<T>(selector:(value:unknown)=>T):T{return selector({legacy:{nodes:[]}})}
 
-const dict=DICTS[boot.language]??DICTS.zh
+const dict=DICTS[boot.language]??DICTS.en
 export const t=(key:string,params?:Record<string,string|number>):string=>{
   const texts=dict as unknown as Record<string,string>
-  let result=texts[key]??(DICTS.en as unknown as Record<string,string>)[key]??key
+  let result=hostText(boot.language,key)??texts[key]??(DICTS.en as unknown as Record<string,string>)[key]??key
   for(const [k,v]of Object.entries(params??{}))result=result.replaceAll(`{${k}}`,String(v))
   return result.replaceAll('dsh-context','codex-context')
 }

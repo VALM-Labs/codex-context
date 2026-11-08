@@ -5,7 +5,9 @@ https://github.com/bowenliang123/dsh-context
 Upstream revision: dd45d3c6485677f625d8bfbaa0751ef77d5c1879
 
 The original client source remains in ../src/client and is compiled directly.
-The build adapts branding and disables the two DSH-only prompt-injection controls.
+The build adapts branding, replaces the recommendation card with local project
+information, removes DSH balance and npm update lookups, and omits unsupported
+placement and prompt-injection preferences. The provenance lists these adapters.
 The VS Code host, local Codex adapter, and message bridge are new.
 
 DeepSeek Harness UI theme and primitives are MIT licensed; see LICENSE-deepseek-harness.

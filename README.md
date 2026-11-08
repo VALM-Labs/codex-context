@@ -4,7 +4,7 @@ The original **dsh-context** dashboard, adapted into a **VS Code extension for l
 
 ## Install
 
-Download [codex-context-0.1.0.vsix](https://github.com/VALM-Labs/codex-context/releases/latest/download/codex-context-0.1.0.vsix). In VS Code run **Extensions: Install from VSIX**, select the file, and open the **codex-context** Activity Bar icon.
+Download [codex-context-0.1.1.vsix](https://github.com/VALM-Labs/codex-context/releases/latest/download/codex-context-0.1.1.vsix). In VS Code run **Extensions: Install from VSIX**, select the file, and open the **codex-context** Activity Bar icon.
 
 - The sidebar shows the original context dashboard in a narrow pane.
 - **Open Dashboard** in the view title opens the complete page in an editor tab.
@@ -18,7 +18,7 @@ If the entry is not visible immediately after installation, run **Developer: Rel
 
 The VS Code entry is [vscode/](vscode/). It imports the original React components and CSS from [src/client/](src/client/). Its build records SHA-256 provenance for the included upstream files in `dist/upstream-provenance.json` inside the VSIX.
 
-The host changes are a VS Code Webview shell, a local Codex JSONL adapter in a worker thread, branding, and disabled DSH prompt-injection controls. Original DSH instructions remain in [README.upstream.md](README.upstream.md).
+The host changes are a VS Code Webview shell, a local Codex JSONL adapter in a worker thread, Codex product copy, and a local project information card. DSH balance, npm update lookups, placement, and prompt-injection controls are omitted. Fleet and Insights visibility preferences control the VS Code tabs. Original DSH instructions remain in [README.upstream.md](README.upstream.md).
 
 ## Data and limits
 

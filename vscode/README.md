@@ -4,7 +4,7 @@ The original **dsh-context** React interface and styles, hosted directly in a VS
 
 Open the **codex-context** Activity Bar icon for the sidebar. Use **Open Dashboard** in its title bar, or run `codex-context: Open Dashboard`, for the complete editor page. Both surfaces share the selected Codex session.
 
-The original context dashboard, DNA mode, step/turn trends, delta mode, content browser, events, file activity, command panel, Fleet view, Insights page, and preferences are imported from `../src/client`. They are not recreated with a second chart implementation.
+The original context dashboard, DNA mode, step/turn trends, delta mode, content browser, events, file activity, command panel, Fleet view, Insights page, and preferences are imported from `../src/client`. They are not recreated with a second chart implementation. Product copy, the project card, and icons describe Codex. DSH balance and npm update lookups, placement, and prompt-injection controls are omitted; supported tab visibility preferences work in VS Code.
 
 ## Data
 
@@ -21,7 +21,7 @@ npm test
 npm run package
 ```
 
-Install the generated `codex-context-0.1.0.vsix` using **Extensions: Install from VSIX**.
+Install the generated `codex-context-0.1.1.vsix` using **Extensions: Install from VSIX**. Run **Developer: Reload Window** after upgrading an already open dashboard.
 
 Original source: https://github.com/bowenliang123/dsh-context
 
