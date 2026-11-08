@@ -31,6 +31,8 @@ for(const input of Object.keys(browser.metafile.inputs))if(input.replaceAll('\\'
 await writeFile(join(root,'dist','upstream-provenance.json'),JSON.stringify({upstream:'bowenliang123/dsh-context',revision:'dd45d3c6485677f625d8bfbaa0751ef77d5c1879',adapted:['meta.ts','latestVersion.ts','components/pluginInfo.tsx','components/recomCard.tsx','components/balanceCapsule.tsx','components/settingsCard.tsx'],imported},null,2))
 const prices={}
 for(const [id,p]of Object.entries(providers))prices[id]={models:Object.fromEntries(Object.entries(p.models).filter(([,m])=>m.cost).map(([name,m])=>[name,{id:name,cost:m.cost,canonical_model_id:m.canonical_model_id}]))}
+const overrides=JSON.parse(await readFile(join(root,'pricing-overrides.json'),'utf8'))
+for(const [id,entry]of Object.entries(overrides.openai))prices.openai.models[id]={id,cost:entry.cost,canonical_model_id:'openai/'+id}
 await writeFile(join(root,'dist','model-prices.json'),JSON.stringify(prices))
-await writeFile(join(root,'dist','pricing-source.json'),JSON.stringify({source:'@opencode-ai/models/snapshot',generatedAt}))
+await writeFile(join(root,'dist','pricing-source.json'),JSON.stringify({source:'@opencode-ai/models/snapshot',generatedAt,supplement:overrides}))
 console.log('Built original dsh-context components for VS Code.')

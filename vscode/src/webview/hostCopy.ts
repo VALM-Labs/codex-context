@@ -9,6 +9,7 @@ const en={
   'card.slogan':'Your Codex sessions, in context.',
   'card.promotion':'VS Code extension · source and releases',
   'card.tooltip':'Independent local Codex session analytics. View source and download codex-context releases. No transcripts are uploaded.',
+  'pricing.basis':'API estimates use Standard short-context rates; speed modes, long-context and regional adjustments are excluded.',
 }
 type Copy=Record<keyof typeof en,string>
 const copies:Record<string,Copy>={
@@ -24,6 +25,7 @@ const copies:Record<string,Copy>={
     'card.slogan':'看清 Codex 会话的上下文与用量。',
     'card.promotion':'VS Code 插件 · 查看源码与下载更新',
     'card.tooltip':'独立的 Codex 本地会话分析插件。查看源码和下载安装包；不上传会话内容。',
+    'pricing.basis':'费用按 Standard 标准处理、短上下文的 API 费率估算，未计入速度档位、长上下文和地区差价。',
   },
   ja:{
     'plugin.hint':'Codex セッションのコンテキスト分析',
@@ -36,6 +38,7 @@ const copies:Record<string,Copy>={
     'card.slogan':'Codex セッションの構成と使用量を把握。',
     'card.promotion':'VS Code 拡張機能 · ソースとリリース',
     'card.tooltip':'独立した Codex ローカルセッション分析。ソースと配布版を確認できます。会話は送信しません。',
+    'pricing.basis':'API 費用は Standard・短いコンテキストの料金で推定し、速度モード、長文、地域による加算は含めません。',
   },
   es:{
     'plugin.hint':'Análisis del contexto de sesiones Codex',
@@ -48,6 +51,7 @@ const copies:Record<string,Copy>={
     'card.slogan':'Entiende el contexto y uso de tus sesiones Codex.',
     'card.promotion':'Extensión VS Code · código y versiones',
     'card.tooltip':'Análisis local independiente de sesiones Codex. Consulta el código y descarga versiones. No se suben conversaciones.',
+    'pricing.basis':'La estimación API usa tarifas Standard de contexto corto, sin ajustes por velocidad, contexto largo ni región.',
   },
   fr:{
     'plugin.hint':'Analyse du contexte des sessions Codex',
@@ -60,6 +64,7 @@ const copies:Record<string,Copy>={
     'card.slogan':'Comprendre le contexte et l’usage de vos sessions Codex.',
     'card.promotion':'Extension VS Code · code et versions',
     'card.tooltip':'Analyse locale indépendante des sessions Codex. Consultez le code et les versions. Aucune conversation n’est envoyée.',
+    'pricing.basis':'L’estimation API utilise les tarifs Standard de contexte court, sans ajustements de vitesse, de contexte long ou de région.',
   },
   de:{
     'plugin.hint':'Kontextanalyse für Codex-Sitzungen',
@@ -72,6 +77,7 @@ const copies:Record<string,Copy>={
     'card.slogan':'Kontext und Nutzung Ihrer Codex-Sitzungen verstehen.',
     'card.promotion':'VS Code-Erweiterung · Quellcode und Versionen',
     'card.tooltip':'Unabhängige lokale Analyse von Codex-Sitzungen. Quellcode und Versionen ansehen. Keine Gesprächsdaten werden hochgeladen.',
+    'pricing.basis':'API-Schätzungen nutzen Standardtarife für kurze Kontexte, ohne Anpassungen für Geschwindigkeit, lange Kontexte oder Regionen.',
   },
   ru:{
     'plugin.hint':'Анализ контекста сеансов Codex',
@@ -84,6 +90,7 @@ const copies:Record<string,Copy>={
     'card.slogan':'Контекст и расход ваших сеансов Codex.',
     'card.promotion':'Расширение VS Code · исходный код и версии',
     'card.tooltip':'Независимый локальный анализ сеансов Codex. Исходный код и загрузка версий. Переписка не отправляется.',
+    'pricing.basis':'Оценка API использует тариф Standard для короткого контекста без поправок на скорость, длинный контекст и регион.',
   },
   pt:{
     'plugin.hint':'Análise de contexto das sessões Codex',
@@ -96,6 +103,7 @@ const copies:Record<string,Copy>={
     'card.slogan':'Entenda o contexto e uso das suas sessões Codex.',
     'card.promotion':'Extensão VS Code · código e versões',
     'card.tooltip':'Análise local independente de sessões Codex. Veja o código e baixe versões. Nenhuma conversa é enviada.',
+    'pricing.basis':'A estimativa API usa tarifas Standard de contexto curto, sem ajustes de velocidade, contexto longo ou região.',
   },
 }
 export function hostText(language:string,key:string):string|undefined{

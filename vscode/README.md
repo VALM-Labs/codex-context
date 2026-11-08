@@ -21,7 +21,9 @@ npm test
 npm run package
 ```
 
-Install the generated `codex-context-0.1.1.vsix` using **Extensions: Install from VSIX**. Run **Developer: Reload Window** after upgrading an already open dashboard.
+Install the generated `codex-context-0.1.2.vsix` using **Extensions: Install from VSIX**. Run **Developer: Reload Window** after upgrading an already open dashboard.
+
+GPT-6.1 Sol and Terra prices are supplemented from official OpenAI model pages, verified on 2026-11-08; `dist/pricing-source.json` records the sources. Cost estimates use Standard short-context API rates, excluding speed-mode, long-context and regional adjustments. Unknown models are not assigned a guessed price.
 
 Original source: https://github.com/bowenliang123/dsh-context
 

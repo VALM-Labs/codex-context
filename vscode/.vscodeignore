@@ -5,6 +5,7 @@ test-host/**
 .tmp/**
 build.mjs
 upstream-adapter.mjs
+pricing-overrides.json
 vitest.config.*
 package-lock.json
 *.vsix

@@ -12,4 +12,5 @@ The VS Code host, local Codex adapter, and message bridge are new.
 
 DeepSeek Harness UI theme and primitives are MIT licensed; see LICENSE-deepseek-harness.
 Other bundled dependency license comments are retained in the compiled assets.
-Pricing is a build-time @opencode-ai/models snapshot; see dist/pricing-source.json.
+Pricing is a build-time @opencode-ai/models snapshot plus source-attributed
+OpenAI model additions; see dist/pricing-source.json.

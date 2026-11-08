@@ -4,7 +4,7 @@ The original **dsh-context** dashboard, adapted into a **VS Code extension for l
 
 ## Install
 
-Download [codex-context-0.1.1.vsix](https://github.com/VALM-Labs/codex-context/releases/latest/download/codex-context-0.1.1.vsix). In VS Code run **Extensions: Install from VSIX**, select the file, and open the **codex-context** Activity Bar icon.
+Download [codex-context-0.1.2.vsix](https://github.com/VALM-Labs/codex-context/releases/latest/download/codex-context-0.1.2.vsix). In VS Code run **Extensions: Install from VSIX**, select the file, and open the **codex-context** Activity Bar icon.
 
 - The sidebar shows the original context dashboard in a narrow pane.
 - **Open Dashboard** in the view title opens the complete page in an editor tab.
@@ -27,6 +27,8 @@ The extension reads local session logs, archived logs, and the title index under
 Usage is measured and deduplicated. Composition uses the upstream estimator; occupancy is anchored to the latest recorded request. Visible reasoning summaries and complete recorded text are available on demand. Encrypted reasoning is not exposed.
 
 Missing streaming timings remain unclassified. API-equivalent costs use the bundled models.dev snapshot, not subscription billing. DSH prompt prefix/suffix injection is disabled in this read-only viewer. Compressed `.jsonl.zst` logs are reported as unavailable.
+
+The bundled prices include official OpenAI additions for GPT-6.1 Sol and Terra, verified on 2026-11-08. Sources and rates are recorded in [vscode/pricing-overrides.json](vscode/pricing-overrides.json) and packaged in `dist/pricing-source.json`. Estimates use Standard short-context API rates, excluding speed-mode, long-context and regional adjustments. Unrecognized models remain unpriced.
 
 ## Build and test
 

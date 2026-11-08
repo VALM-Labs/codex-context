@@ -54,7 +54,7 @@ function App(){
   return <div className={boot.sidebar?'cc-shell cc-sidebar':'cc-shell'}>
     <header className="cc-toolbar"><select aria-label={l.select} value={state.selected} onChange={e=>navigate(e.target.value)}><option value="">{l.select}</option>{state.sessions.map(s=><option value={s.id} key={s.id}>{s.parentId?'↳ ':''}{s.title}</option>)}</select><button title={l.refresh} onClick={()=>{void request('refresh').catch(e=>setError(String(e)))}}>↻</button>{boot.sidebar&&<button title={l.open} onClick={()=>vscode.postMessage({type:'open'})}>↗</button>}</header>
     <nav className="cc-tabs" role="tablist">{[['context',t('tab.context')],...(prefs.fleetTab==='hide'?[]:[['fleet',t('tab.fleet')]]),...(prefs.insightsEntry==='hide'?[]:[['overview',l.insights]]),['settings',l.settings]].map(([id,label])=><button key={id} role="tab" aria-selected={tab===id} onClick={()=>setTab(id)}>{label}</button>)}</nav>
-    <details className="cc-coverage"><summary>{l.data}</summary><p>{l.details}</p>{state.compressed>0&&<p>{state.compressed} · {l.compressed}</p>}</details>
+    <details className="cc-coverage"><summary>{l.data}</summary><p>{l.details}</p><p>{t('pricing.basis')}</p>{state.compressed>0&&<p>{state.compressed} · {l.compressed}</p>}</details>
     {error&&<div role="alert" className="cc-error">{error}</div>}
     {progress&&<div role="status" className="cc-progress">{l.indexing} {progress}</div>}
     <div className="cc-page" data-conversation-scroll>
