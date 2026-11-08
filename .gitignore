@@ -25,6 +25,7 @@ yarn-error.log*
 
 # Packed tarballs
 *.tgz
+*.vsix
 
 # npm cache kept in-repo for sandboxed environments
 .npm-cache/

@@ -1,0 +1,13 @@
+codex-context is an independent VS Code adaptation of dsh-context.
+
+Original dsh-context source: Copyright 2025 bowenliang123, Apache-2.0.
+https://github.com/bowenliang123/dsh-context
+Upstream revision: dd45d3c6485677f625d8bfbaa0751ef77d5c1879
+
+The original client source remains in ../src/client and is compiled directly.
+The build adapts branding and disables the two DSH-only prompt-injection controls.
+The VS Code host, local Codex adapter, and message bridge are new.
+
+DeepSeek Harness UI theme and primitives are MIT licensed; see LICENSE-deepseek-harness.
+Other bundled dependency license comments are retained in the compiled assets.
+Pricing is a build-time @opencode-ai/models snapshot; see dist/pricing-source.json.

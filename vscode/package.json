@@ -1,0 +1,167 @@
+{
+  "name": "codex-context",
+  "displayName": "codex-context",
+  "description": "The original dsh-context interface adapted for Codex sessions in VS Code.",
+  "version": "0.1.0",
+  "publisher": "VALM-Labs",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VALM-Labs/codex-context.git"
+  },
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "main": "./dist/extension.cjs",
+  "activationEvents": [
+    "onView:codex-context.sidebar"
+  ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false
+    },
+    "virtualWorkspaces": false
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "codex-context.open",
+        "title": "Open Dashboard",
+        "category": "codex-context",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "codex-context.refresh",
+        "title": "Refresh Sessions",
+        "category": "codex-context",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "codex-context.selectSession",
+        "title": "Select Session",
+        "category": "codex-context",
+        "icon": "$(list-selection)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "codex-context",
+          "title": "codex-context",
+          "icon": "media/context.svg"
+        }
+      ]
+    },
+    "views": {
+      "codex-context": [
+        {
+          "id": "codex-context.sidebar",
+          "name": "codex-context",
+          "type": "webview"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "codex-context.open",
+          "when": "view == codex-context.sidebar",
+          "group": "navigation@1"
+        },
+        {
+          "command": "codex-context.selectSession",
+          "when": "view == codex-context.sidebar",
+          "group": "navigation@2"
+        },
+        {
+          "command": "codex-context.refresh",
+          "when": "view == codex-context.sidebar",
+          "group": "navigation@3"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "codex-context",
+      "properties": {
+        "codex-context.codexHome": {
+          "type": "string",
+          "default": "",
+          "description": "Codex home directory. Empty uses CODEX_HOME or ~/.codex.",
+          "scope": "machine"
+        },
+        "codex-context.refreshInterval": {
+          "type": "number",
+          "default": 5,
+          "minimum": 2,
+          "maximum": 60,
+          "description": "Refresh interval in seconds."
+        },
+        "codex-context.language": {
+          "type": "string",
+          "default": "zh",
+          "enum": [
+            "zh",
+            "en",
+            "ja",
+            "es",
+            "fr",
+            "de",
+            "ru",
+            "pt"
+          ],
+          "description": "Dashboard language."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "vitest run",
+    "package": "npm run build && vsce package --no-dependencies --allow-missing-repository --out codex-context-0.1.0.vsix"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-client-store": "^0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-primitives": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-util-code-language": "^0.2.2-rc.1",
+    "@deepseek-ai/dsh-util-workspace-path": "0.2.2-rc.1",
+    "@opencode-ai/models": "^0.0.87",
+    "@shikijs/langs": "^4.5.0",
+    "anser": "^2.3.5",
+    "clsx": "^2.1.1",
+    "diff": "^9.0.0",
+    "immer": "^10.2.0",
+    "katex": "^0.16.47",
+    "mdast-util-from-markdown": "^2.0.2",
+    "mdast-util-gfm": "^3.1.0",
+    "mdast-util-math": "^3.0.0",
+    "micromark-core-commonmark": "^2.0.3",
+    "micromark-extension-gfm": "^3.0.0",
+    "micromark-extension-math": "^3.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "shiki": "^4.5.0",
+    "simple-icons": "^16.32.0",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/node": "4.3.3",
+    "@tailwindcss/oxide": "4.3.3",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@types/vscode": "^1.95.0",
+    "@vitest/coverage-v8": "^3.2.0",
+    "@vscode/vsce": "^3.3.0",
+    "esbuild": "^0.25.0",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}
